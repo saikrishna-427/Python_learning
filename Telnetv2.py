@@ -7,9 +7,8 @@ password = getpass.getpass()
 cmd = input('enter the only show command cmd: ')
 
 tn = telnetlib.Telnet(HOST)
-
 tn.read_until("Username: ")
-tn.write(user + b"\n")
+tn.write(user + b"\n")   #In Python3, data has to be sent in bits 
 if password:
     tn.read_until("Password: ")
     tn.write(password + b"\n")
